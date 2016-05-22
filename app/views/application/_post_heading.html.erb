@@ -1,0 +1,5 @@
+<div class="post-heading">
+    <h1><%= post.title %></h1>
+    <h2 class="subheading"><%= post.description %></h2>
+    <span class="meta">Publié par <a href="<%= post.author.link %>"><%= post.author.name %></a> le <%= post.created_at.strftime("%A %d %B %Y") %></span>
+</div>

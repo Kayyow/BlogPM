@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        <%= if content_for?(:title) then yield(:title) + ' | ' end %>
+        Le blog de Kayyow
+    </title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag   'application', 'http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= render '/layouts/navigation' %>
+
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url(<%= yield :cover_image %>)">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <%= yield :heading %>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <%= yield %>
+</div>
+
+<hr>
+
+<%= render '/layouts/footer' %>
+
+</body>
+</html>
