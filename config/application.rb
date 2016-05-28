@@ -25,7 +25,7 @@ module BlogPM
 
     config.sass.preferred_syntax = :sass
 
-    config.i18n.available_locales = :fr
+    config.i18n.available_locales = [:fr, :en]
     config.i18n.default_locale = :fr
   end
 end
