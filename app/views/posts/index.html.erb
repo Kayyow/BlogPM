@@ -18,12 +18,18 @@
             <hr>
         <% end %>
         
-        <hr>
         <!-- Pager -->
         <ul class="pager">
-            <li class="next">
-                <a href="#">Older Posts &rarr;</a>
-            </li>
+            <% if @page_number > 1 %>
+                <li class="previous">
+                    <%= link_to "&larr; Articles récents".html_safe, pager_path(@page_number - 1) %>
+                </li>
+            <% end %>
+            <% if @page_number < @page_max %>
+                <li class="next">
+                    <%= link_to "Anciens articles &rarr;".html_safe, pager_path(@page_number + 1) %>
+                </li>
+            <% end %>
         </ul>
     </div>
 </div>

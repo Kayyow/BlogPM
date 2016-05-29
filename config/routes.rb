@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root 'posts#index'
   get 'contact' => 'contact#index'
   get 'about' => 'about#index'
-  get 'posts/older/:number' => 'posts#olderIndex', as: older_index
+  get 'page/:number' => 'posts#pager', as: 'pager'
 
   resources :posts, only: [:show]
 
