@@ -64,7 +64,7 @@ hr.small {
 	left: 0;
 	width: 100%;
 	z-index: 3;
-	background-color: $brand-primary;
+	background-color: rgba(242, 180, 46, 0.9);
 	border-bottom: 1px solid lighten($brand-primary, 20%);
 	@include sans-serif;
 	.navbar-toggle {
