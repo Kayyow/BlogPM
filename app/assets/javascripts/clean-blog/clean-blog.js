@@ -1013,7 +1013,6 @@ if ($(window).width() > MQL) {
             previousTop: 0
         },
         function() {
-            console.log(++i, $(window).scrollTop());
             var currentTop = $(window).scrollTop();
             //check if user is scrolling up
             if (currentTop < this.previousTop) {
