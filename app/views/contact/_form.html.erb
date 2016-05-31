@@ -1,0 +1,35 @@
+<%= form_tag contact_path, name: 'sentMessage', id: 'contactForm', novalidate: '' do %>
+    <div class="row control-group">
+        <div class="form-group col-xs-5 floating-label-form-group controls">
+            <%= label_tag nil, 'Name' %>
+            <%= text_field_tag :name, nil, class: 'form-control', placeholder: 'Nom', id: 'name', required: '', data: { validation_required_message: 'Veuillez entrer votre nom.' } %>
+            <p class="help-block text-danger"></p>
+        </div>
+        <div class="form-group col-xs-6 col-xs-offset-1 floating-label-form-group controls">
+            <%= label_tag nil, 'Adresse email' %>
+            <%= email_field_tag :email, nil, class: 'form-control', placeholder: 'Adresse email', id: 'email', required: '', data: { validation_required_message: 'Veuillez entrer votre adresse email.' } %>
+            <p class="help-block text-danger"></p>
+        </div>
+    </div>
+    <div class="row control-group">
+        <div class="form-group col-xs-12 floating-label-form-group controls">
+            <%= label_tag nil, 'Suject' %>
+            <%= text_field_tag :subject, nil, class: 'form-control', placeholder: 'Sujet', id: 'subject', required: '', data: { validation_required_message: 'Veuillez entrer le sujet du message.' } %>
+            <p class="help-block text-danger"></p>
+        </div>
+    </div>
+    <div class="row control-group">
+        <div class="form-group col-xs-12 floating-label-form-group controls">
+            <%= label_tag nil, 'Message' %>
+            <%= text_area_tag :message, nil, class: 'form-control', rows: 5, placeholder: 'Message', id: 'message', required: '', data: { validation_required_message: 'Veuillez entrer un message.' } %>
+            <p class="help-block text-danger"></p>
+        </div>
+    </div>
+    <br>
+    <div id="success"></div>
+    <div class="row">
+        <div class="form-group col-xs-12">
+            <button type="submit" class="btn btn-default">Envoyer</button>
+        </div>
+    </div>
+<% end %>

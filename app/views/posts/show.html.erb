@@ -4,9 +4,25 @@
 
 <!-- Post Content -->
 <div class="row">
-    <article>
+    <article class="text-justify">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <%= @post.content.html_safe %>
+
+            <!-- Pager -->
+            <ul class="pager">
+                <% if @post.previous_post %>
+                    <li class="previous">
+                        <%= link_to "&larr; Article précédent".html_safe, post_path(@post.previous_post.id), rel: 'tooltip', 'data-toggle' => "tooltip", 'data-placement' => "top", 'data-original-title' => @post.previous_post.title %>
+                    </li>
+                <% end %>
+                <% if @post.next_post %>
+                    <li class="next">
+                        <%= link_to "Article suivant &rarr;".html_safe, post_path(@post.next_post.id), rel: 'tooltip', 'data-toggle' => "tooltip", 'data-placement' => "top", 'data-original-title' => @post.next_post.title %>
+                    </li>
+                <% end %>
+            </ul>
         </div>
     </article>
 </div>
+
+<%= render 'comments' %>

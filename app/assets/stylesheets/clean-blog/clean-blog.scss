@@ -64,9 +64,33 @@ hr.small {
 	left: 0;
 	width: 100%;
 	z-index: 3;
+	background-color: $brand-primary;
+	border-bottom: 1px solid lighten($brand-primary, 20%);
 	@include sans-serif;
+	.navbar-toggle {
+		background-color: transparent;
+		border-color: white;
+		color: white;
+		.icon-bar {
+			background-color: white;
+		}
+		&:hover, &:focus {
+			background-color: transparent;
+			border-color: lighten($brand-primary, 20%);
+			.icon-bar {
+				background-color: lighten($brand-primary, 20%);
+			}
+		}
+	}
+	.navbar-collapse {
+		border-color: lighten($brand-primary, 20%);
+		li a {
+			color: white;
+		}
+	}
 	.navbar-brand {
 		font-weight: 800;
+		color: white;
 	}
 	.nav {
 		li {
@@ -80,10 +104,20 @@ hr.small {
 	}
 	@media only screen and (min-width: 768px) {
 		background: transparent;
-		border-bottom: 1px solid transparent;
+		border-bottom: 1px solid transparent;		
+		-webkit-transition: background-color 0.3s;
+		-moz-transition: background-color 0.3s;
+		transition: background-color 0.3s;
+		/* Force Hardware Acceleration in WebKit */
+		-webkit-transform: translate3d(0, 0, 0);
+		-moz-transform: translate3d(0, 0, 0);
+		-ms-transform: translate3d(0, 0, 0);
+		-o-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
 		.navbar-brand {
-			color: white;
-			padding: 20px;
+			padding: 20px;			
 			&:hover,
 			&:focus {
 				color: $white-faded;
@@ -101,25 +135,11 @@ hr.small {
 				}
 			}
 		}
-	}
-	@media only screen and (min-width: 1170px) {
-		-webkit-transition: background-color 0.3s;
-		-moz-transition: background-color 0.3s;
-		transition: background-color 0.3s;
-		/* Force Hardware Acceleration in WebKit */
-		-webkit-transform: translate3d(0, 0, 0);
-		-moz-transform: translate3d(0, 0, 0);
-		-ms-transform: translate3d(0, 0, 0);
-		-o-transform: translate3d(0, 0, 0);
-		transform: translate3d(0, 0, 0);
-		-webkit-backface-visibility: hidden;
-		backface-visibility: hidden;
 		&.is-fixed {
 			/* when the user scrolls down, we hide the header right above the viewport */
 			position: fixed;
 			top: -61px;
-			background-color: rgba(255, 255, 255, 0.9);
-			border-bottom: 1px solid darken(white, 5%);
+			background-color: rgba(242, 180, 46, 0.9);
 			-webkit-transition: -webkit-transform 0.3s;
 			-moz-transition: -moz-transform 0.3s;
 			transition: transform 0.3s;
@@ -127,7 +147,7 @@ hr.small {
 				color: $gray-dark;
 				&:hover,
 				&:focus {
-					color: $brand-primary;
+					color: white;
 				}
 			}
 			.nav {
@@ -136,7 +156,7 @@ hr.small {
 						color: $gray-dark;
 						&:hover,
 						&:focus {
-							color: $brand-primary;
+							color: white;
 						}
 					}
 				}
@@ -311,7 +331,7 @@ footer {
 	position: relative;
 	margin-bottom: 0;
 	padding-bottom: 0.5em;
-	border-bottom: 1px solid $gray-light;
+	border-bottom: 1px solid lighten($brand-primary, 20%);
 	input,
 	textarea {
 		z-index: 1;
@@ -343,7 +363,7 @@ footer {
 	}
 	&:not(:first-child) {
 		padding-left: 14px;
-		border-left: 1px solid $gray-light;
+		border-left: 1px solid lighten($brand-primary, 20%);
 	}
 }
 
@@ -425,6 +445,34 @@ form .row:first-child .floating-label-form-group {
 			color: $gray;
 			background-color: $gray-dark;
 			cursor: not-allowed;
+		}
+	}
+}
+
+// Comments Styles
+
+.list-group {
+	margin-top: 20px;
+
+	.list-group-item {
+		transition: background-color .3s;
+		.list-group-item-text {
+			margin-top: 10px;
+			font-size: 14px;
+		}
+		&:hover, &:focus {
+			background-color: $brand-primary;
+			.list-group-item-heading {
+				.date {
+					color: white
+				}
+			}
+			.list-group-item-text {
+				color: white;
+			}
+		}
+		&:last-of-type {
+			border-radius: 0;
 		}
 	}
 }
