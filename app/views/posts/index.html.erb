@@ -13,7 +13,7 @@
                         <%= post.description %>
                     </h3>
                 <% end %>
-                <p class="post-meta">Publié par <a href="<%= post.author.link %>"><%= post.author.name %></a> le <%= l(post.created_at, format: '%A %d %B %Y').capitalize %></p>
+                <p class="post-meta">Écrit par <a href="<%= post.author.link %>"><%= post.author.name %></a> le <%= l(post.created_at, format: '%A %d %B %Y').capitalize %></p>
             </div>
             <hr>
         <% end %>

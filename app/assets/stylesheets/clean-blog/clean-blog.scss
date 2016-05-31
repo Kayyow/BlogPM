@@ -455,23 +455,16 @@ form .row:first-child .floating-label-form-group {
 	margin-top: 20px;
 
 	.list-group-item {
-		transition: background-color .3s;
+		border: none;
 		.list-group-item-text {
 			margin-top: 10px;
 			font-size: 14px;
 		}
 		&:hover, &:focus {
-			background-color: $brand-primary;
-			.list-group-item-heading {
-				.date {
-					color: white
-				}
-			}
-			.list-group-item-text {
-				color: white;
-			}
+			background: rgba(0, 0, 0, 0.05);
+			transition: background-color .3s;
 		}
-		&:last-of-type {
+		&:first-of-type, &:last-of-type {
 			border-radius: 0;
 		}
 	}

@@ -1,6 +1,10 @@
 ---
 fr:
   activerecord:
+    models:
+      comment: Commentaire
+      post: Article
+      author: Auteur
     errors:
       messages:
         record_invalid: 'La validation a échoué : %{errors}'

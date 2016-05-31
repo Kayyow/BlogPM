@@ -1,23 +1,21 @@
-<%= form_tag '#', name: 'postComment', id: 'commentForm' do %>
+<%= form_for([@post, @post.comments.build]) do |f| %>
     
-    <h4>Laisse ton commentaire</h4>
-
     <div class="control-group">
         <div class="form-group col-xs-5 floating-label-form-group controls">
-            <%= label_tag nil, 'Name' %>
-            <%= text_field_tag :name, nil, class: 'form-control', placeholder: 'Nom', id: 'name', required: '', data: { validation_required_message: 'Veuillez entrer votre nom.' } %>
+            <%= f.label :name, 'Nom/Pseudo' %>
+            <%= f.text_field :name, class: 'form-control', placeholder: 'Nom/Pseudo', id: 'name', required: '', data: { validation_required_message: 'Veuillez entrer votre nom.' } %>
             <p class="help-block text-danger"></p>
         </div>
         <div class="form-group col-xs-6 col-xs-offset-1 floating-label-form-group controls">
-            <%= label_tag nil, 'Adresse email' %>
-            <%= email_field_tag :email, nil, class: 'form-control', placeholder: 'Adresse email', id: 'email', required: '', data: { validation_required_message: 'Veuillez entrer votre adresse email.' } %>
+            <%= f.label :email, 'Adresse email' %>
+            <%= f.email_field :email, class: 'form-control', placeholder: 'Adresse email', id: 'email', required: '', data: { validation_required_message: 'Veuillez entrer votre adresse email.' } %>
             <p class="help-block text-danger"></p>
         </div>
     </div>
     <div class="control-group">
         <div class="form-group col-xs-12 floating-label-form-group controls">
-            <%= label_tag nil, 'Commentaire' %>
-            <%= text_area_tag :message, nil, class: 'form-control', rows: 3, placeholder: 'Commentaire', id: 'comment', required: '', data: { validation_required_message: 'Veuillez entrer un commentaire.' } %>
+            <%= f.label :message, 'Commentaire' %>
+            <%= f.text_area :message, class: 'form-control', rows: 3, placeholder: 'Commentaire', id: 'comment', required: '', data: { validation_required_message: 'Veuillez entrer un commentaire.' } %>
             <p class="help-block text-danger"></p>
         </div>
     </div>
@@ -28,4 +26,5 @@
             <button type="submit" class="btn btn-default">Envoyer</button>
         </div>
     </div>
+
 <% end %>

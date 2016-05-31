@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   get 'about' => 'about#index'
   get 'page/:number' => 'posts#pager', as: 'pager'
 
-  resources :posts, only: [:show]
+  resources :posts, only: [:show] do
+    resources :comments, only: [:create]
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

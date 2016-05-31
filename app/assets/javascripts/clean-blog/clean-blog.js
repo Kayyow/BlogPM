@@ -1007,7 +1007,6 @@ var i = 0;
 
 //primary navigation slide-in effect
 if ($(window).width() > MQL) {
-    console.log('coucou')
     var headerHeight = $('.navbar-custom').height();
     $(window).on('scroll', {
             previousTop: 0
