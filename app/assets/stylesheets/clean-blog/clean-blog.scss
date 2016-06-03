@@ -61,14 +61,14 @@ hr.small {
 .navbar-header {
 	img.logo {
 		height: 38px;
-		margin-top: -8px;
+		margin-top: -9px;
 		margin-right: 10px;
 		cursor: pointer;
 	}
 }
 
 .navbar-custom {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -112,6 +112,7 @@ hr.small {
 		}
 	}
 	@media only screen and (min-width: 768px) {
+		position: absolute;
 		background: transparent;
 		border-bottom: 1px solid transparent;		
 		-webkit-transition: background-color 0.3s;
