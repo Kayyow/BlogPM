@@ -1018,8 +1018,10 @@ if ($(window).width() > MQL) {
                 //if scrolling up...
                 if (currentTop > 0 && $('.navbar-custom').hasClass('is-fixed')) {
                     $('.navbar-custom').addClass('is-visible');
+                    //$('.navbar-brand .logo').addClass('hide');
                 } else {
                     $('.navbar-custom').removeClass('is-visible is-fixed');
+                    //$('.navbar-brand .logo').removeClass('hide');
                 }
             } else {
                 //if scrolling down...

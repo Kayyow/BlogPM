@@ -10,16 +10,16 @@
 
             <!-- Pager -->
             <ul class="pager">
-                <% if @post.previous_post %>
-                    <li class="previous">
+                <li class="previous">
+                    <% if @post.previous_post %>
                         <%= link_to "&larr; Article précédent".html_safe, post_path(@post.previous_post.id), rel: 'tooltip', 'data-toggle' => "tooltip", 'data-placement' => "top", 'data-original-title' => @post.previous_post.title %>
-                    </li>
-                <% end %>
-                <% if @post.next_post %>
-                    <li class="next">
+                    <% end %>
+                </li>
+                <li class="next">
+                    <% if @post.next_post %>
                         <%= link_to "Article suivant &rarr;".html_safe, post_path(@post.next_post.id), rel: 'tooltip', 'data-toggle' => "tooltip", 'data-placement' => "top", 'data-original-title' => @post.next_post.title %>
-                    </li>
-                <% end %>
+                    <% end %>
+                </li>
             </ul>
         </div>
     </article>

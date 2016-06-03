@@ -1,4 +1,4 @@
-<% header_image image_url("background-landscape-wallpaper-1920x1080-3.jpg") %>
+<% header_image image_url("background-landscape-wallpaper-1920x1080-3-2.jpg") %>
 <% site_heading 'Le Blog de Kayyow', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...' %>
 
 <div class="row">
@@ -20,16 +20,25 @@
         
         <!-- Pager -->
         <ul class="pager">
-            <% if @page_number > 1 %>
-                <li class="previous">
+            <li class="previous">
+                <% if @page_number > 1 %>
                     <%= link_to "&larr; Articles récents".html_safe, pager_path(@page_number - 1) %>
-                </li>
-            <% end %>
-            <% if @page_number < @page_max %>
-                <li class="next">
+                <% else %>
+                    <span class="invisible">&larr; Articles récents</span>
+                <% end %>
+            </li>
+
+            <li class="page-number">
+                <span>Page <%= @page_number %>/<%= @page_max %></span>
+            </li>
+
+            <li class="next">
+                <% if @page_number < @page_max %>
                     <%= link_to "Anciens articles &rarr;".html_safe, pager_path(@page_number + 1) %>
-                </li>
-            <% end %>
+                <% else %>
+                    <span class="invisible">Anciens articles &rarr;</span>
+                <% end %>
+            </li>
         </ul>
     </div>
 </div>

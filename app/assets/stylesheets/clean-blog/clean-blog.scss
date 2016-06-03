@@ -58,6 +58,15 @@ hr.small {
 
 // Navigation
 
+.navbar-header {
+	img.logo {
+		height: 38px;
+		margin-top: -8px;
+		margin-right: 10px;
+		cursor: pointer;
+	}
+}
+
 .navbar-custom {
 	position: absolute;
 	top: 0;
@@ -144,19 +153,19 @@ hr.small {
 			-moz-transition: -moz-transform 0.3s;
 			transition: transform 0.3s;
 			.navbar-brand {
-				color: $gray-dark;
+				color: white;
 				&:hover,
 				&:focus {
-					color: white;
+					color: $white-faded;
 				}
 			}
 			.nav {
 				li {
 					a {
-						color: $gray-dark;
+						color: white;
 						&:hover,
 						&:focus {
-							color: white;
+							color: $white-faded;
 						}
 					}
 				}
@@ -363,7 +372,6 @@ footer {
 	}
 	&:not(:first-child) {
 		padding-left: 14px;
-		border-left: 1px solid lighten($brand-primary, 20%);
 	}
 }
 
@@ -413,7 +421,6 @@ form .row:first-child .floating-label-form-group {
 // Pager Styling
 
 .pager {
-
 	margin: 20px 0 0;
 
 	li {
@@ -434,6 +441,12 @@ form .row:first-child .floating-label-form-group {
 			color: white;
 			background-color: $brand-primary;
 			border: 1px solid $brand-primary;
+		}
+	}
+
+	.page-number {
+		span {
+			color: $brand-primary;
 		}
 	}
 
@@ -458,7 +471,8 @@ form .row:first-child .floating-label-form-group {
 		border: none;
 		.list-group-item-text {
 			margin-top: 10px;
-			font-size: 14px;
+			font-size: 15px;
+			line-height: 1.35;
 		}
 		&:hover, &:focus {
 			background: rgba(0, 0, 0, 0.05);

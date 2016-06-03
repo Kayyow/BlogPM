@@ -15,7 +15,7 @@
                 <% @post.comments.order(created_at: :desc).each do |comment| %>
                     <div class="list-group-item">
 
-                        <h5 class="list-group-item-heading">
+                        <h4 class="list-group-item-heading small">
                             <%= comment.name %>
                             <small>
                                 <%= comment.email %>
