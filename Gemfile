@@ -35,6 +35,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'twitter-bootstrap-rails'
 gem 'jquery-turbolinks'
 gem 'rails-i18n', '~> 4.0.0'
+gem 'devise'
+gem 'activeadmin', github: 'activeadmin'
+gem 'tinymce-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

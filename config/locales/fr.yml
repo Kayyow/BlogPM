@@ -2,9 +2,20 @@
 fr:
   activerecord:
     models:
-      comment: Commentaire
-      post: Article
       author: Auteur
+      post: Article
+      comment: Commentaire
+    attributes:
+      post:
+        title: Titre
+        content: Contenu
+        cover_image: 'Image de couverture'
+        author: Auteur
+        comments: Commentaires
+      comment:
+        name: Nom
+        email: E-mail
+        message: Commentaire
     errors:
       messages:
         record_invalid: 'La validation a échoué : %{errors}'

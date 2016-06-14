@@ -1,4 +1,4 @@
-<% header_image image_url("background-landscape-wallpaper-1920x1080-3-2.jpg") %>
+<% header_image image_url("background-landscape-wallpaper-1920x1080-3.jpg") %>
 <% site_heading 'Le Blog de Kayyow', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...' %>
 
 <div class="row">
@@ -28,8 +28,8 @@
                 <% end %>
             </li>
 
-            <li class="page-number">
-                <span>Page <%= @page_number %>/<%= @page_max %></span>
+            <li>
+                <span>Page <span class="page-number"><%= @page_number %></span> / <%= @page_max %></span>
             </li>
 
             <li class="next">

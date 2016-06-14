@@ -1,13 +1,13 @@
 <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" id="comments">
 
         <hr>
 
         <h4>
-            <%= pluralize(@post.comments.length, ' commentaire')%>
+            <%= pluralize(@post.comments.length - 1 , ' commentaire') %>
         </h4>
 
-        <%= render 'form_comment' %>
+        <%= render 'posts/comments/form' %>
 
         <% if @post.comments.any? %>        
             <div class="list-group">

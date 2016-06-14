@@ -1,4 +1,5 @@
 /*
- *= require_tree .
+ *= require bootstrap_and_overrides
+ *= require_tree ./clean_blog
  *= require_self
  */

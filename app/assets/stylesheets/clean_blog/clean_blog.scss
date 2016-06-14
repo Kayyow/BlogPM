@@ -90,6 +90,13 @@ hr.small {
 				background-color: lighten($brand-primary, 20%);
 			}
 		}
+		&.collapsed {
+			border-color: white;
+			color: white;
+			.icon-bar {
+				background-color: white;
+			}
+		}
 	}
 	.navbar-collapse {
 		border-color: lighten($brand-primary, 20%);
@@ -100,6 +107,9 @@ hr.small {
 	.navbar-brand {
 		font-weight: 800;
 		color: white;
+		&:hover, &:focus {
+			color: $white-faded;
+		}
 	}
 	.nav {
 		li {
@@ -108,6 +118,13 @@ hr.small {
 				font-size: 12px;
 				font-weight: 800;
 				letter-spacing: 1px;
+			}
+		}
+	}
+	.navbar-nav {
+		> li > a {
+			&:hover, &:focus {
+				color: $white-faded;
 			}
 		}
 	}
@@ -321,6 +338,15 @@ hr.small {
 	border-bottom-left-radius: 5px;
 }
 
+.img-center {
+	margin: 0;
+	text-align: center;
+}
+
+.img-responsive {
+	display: inline-block;
+}
+
 footer {
 	padding: 50px 0 65px;
 	.list-inline {
@@ -393,6 +419,20 @@ form .row:first-child .floating-label-form-group {
 	border-top: 1px solid $gray-light;
 }
 
+form .alert > ul {
+	padding-left: 10px;
+	list-style: none;
+	> li {
+		margin-bottom: 10px;
+		font-size: 15px;
+	}
+	ul {
+		padding-left: 20px;
+		font-size: 14px;
+		list-style-type: square;
+	}
+}
+
 // Button Styles
 
 .btn {
@@ -443,10 +483,8 @@ form .row:first-child .floating-label-form-group {
 			background-color: $brand-primary;
 			border: 1px solid $brand-primary;
 		}
-	}
-
-	.page-number {
-		span {
+		
+		span.page-number {
 			color: $brand-primary;
 		}
 	}

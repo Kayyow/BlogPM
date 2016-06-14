@@ -1,11 +1,12 @@
 class CommentsController < ApplicationController
     def create
         @post = Post.find params[:post_id]
-        @comment = @post.comments.create(comment_params)
-        if @post.save
-            redirect_to post_path(@post)
+        @new_comment = @post.comments.create(comment_params)
+        if @new_comment.valid?
+            @post.save
+            redirect_to post_path(@post, anchor: 'comments')
         else
-            render plain: @post.errors.messages
+            render 'posts/show'
         end
     end
 

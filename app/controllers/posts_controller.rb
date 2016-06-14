@@ -4,12 +4,12 @@ class PostsController < ApplicationController
     ENTRIES_PER_PAGE = 5
 
     def index
-        @posts = Post.all.order(created_at: :desc).limit(ENTRIES_PER_PAGE)
+        @posts = Post.recent(ENTRIES_PER_PAGE)
     end
 
     def pager
         if @page_number > 1 && @page_number <= @page_max
-            @posts = Post.all.order(created_at: :desc).limit(ENTRIES_PER_PAGE).offset((@page_number - 1) * ENTRIES_PER_PAGE)
+            @posts = Post.recent(ENTRIES_PER_PAGE).offset((@page_number - 1) * ENTRIES_PER_PAGE)
             render :index
         else
             redirect_to root_path
@@ -18,6 +18,7 @@ class PostsController < ApplicationController
 
     def show
         @post = Post.find params[:id]
+        @new_comment = @post.comments.build
     end
 
     private

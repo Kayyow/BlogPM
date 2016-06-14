@@ -1,0 +1,16 @@
+#header h1 img {
+    top: 0;
+}
+
+.column:first-of-type .panel_contents li h4 {
+    margin-bottom: 4px;
+}
+.column:first-of-type .panel_contents li h4:first-of-type {
+    margin-top: 15px
+}
+
+.mce-tinymce.mce-container.mce-panel {
+    display: inline-block;
+    width: calc(80% - 22px);
+    padding: 10px;
+}

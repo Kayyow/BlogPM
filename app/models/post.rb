@@ -2,7 +2,11 @@ class Post < ActiveRecord::Base
     belongs_to :author
     has_many :comments
 
-    validates :title, :content, :author, :cover_image, presence: true
+    validates :title, :content, :cover_image, :author, presence: true
+
+    def self.recent(n = 1)
+        all.order(created_at: :desc).limit(n)
+    end
 
     def previous_post
         self.class.where(['created_at < ?', created_at]).order(created_at: :desc).first

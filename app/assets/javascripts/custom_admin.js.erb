@@ -1,0 +1,20 @@
+tinyMCE.init({
+    plugins: 'link image',
+    selector: 'textarea#post_content',
+    content_css: '<%= asset_path("clean_blog/clean_blog", type: :stylesheet) %>',
+    forced_root_block: false,
+    menubar: false,
+    toolbar: 'styleselect | undo redo | bold italic underline strikethrough | link image | removeformat',
+    image_dimensions: false,
+    image_class_list: [
+        { title: 'Responsive', value: 'img-responsive' },
+        { title: 'None', value: '' }
+    ],
+    style_formats: [
+        { title: 'Paragraph', block: 'p' },
+        { title: 'Section heading', block: 'h2', classes: 'section-heading' },
+        { title: 'Blockquote', block: 'blockquote' },
+        { title: 'Caption image', block: 'p', classes: 'caption text-muted' },
+        { title: 'Center', block: 'p', classes: 'img-center' }
+    ]
+});

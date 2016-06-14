@@ -27,5 +27,10 @@ module BlogPM
 
     config.i18n.available_locales = [:fr, :en]
     config.i18n.default_locale = :fr
+
+    # Disable generation of controller specific assets files
+    config.generators do |g|
+      g.assets false
+    end
   end
 end
